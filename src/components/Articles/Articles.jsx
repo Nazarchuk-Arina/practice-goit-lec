@@ -3,7 +3,11 @@ const Articles = ({ articles }) => {
     <div>
       <ul>
         {articles.map((post) => (
-          <li key={post.objectID}>{post.tile}</li>
+          <li key={post.objectID}>
+            <a href={post.url ?? post.story_url}>
+              {post.title ?? post.story_title}
+            </a>
+          </li>
         ))}
       </ul>
     </div>
